@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114640500501460748}
   - component: {fileID: 114949962123232878}
   - component: {fileID: 114873783572805380}
-  - component: {fileID: 114930787781061812}
+  - component: {fileID: 114158626156542632}
   m_Layer: 5
   m_Name: Explain
   m_TagString: Untagged
@@ -92,6 +92,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114158626156542632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1176637843922864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 318bc51a2255900468cc242990a6d695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114463375029016906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -162,7 +173,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114930787781061812}
+        - m_Target: {fileID: 114158626156542632}
           m_MethodName: OnClick
           m_Mode: 1
           m_Arguments:
@@ -176,17 +187,6 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &114930787781061812
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1176637843922864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 318bc51a2255900468cc242990a6d695, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114949962123232878
 MonoBehaviour:
   m_ObjectHideFlags: 1

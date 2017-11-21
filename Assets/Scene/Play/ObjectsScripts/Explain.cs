@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Explain : MonoBehaviour {
+public class Explain: MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
