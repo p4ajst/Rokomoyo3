@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 222524150978956042}
   - component: {fileID: 114303583053101524}
   - component: {fileID: 114853454743111222}
+  - component: {fileID: 114090156861619452}
   m_Layer: 5
   m_Name: Restart_Button
   m_TagString: Untagged
@@ -224,6 +225,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114090156861619452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1632169317632330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89ba2579692e964eb0cc32da2051ceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114096087265845538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -674,7 +686,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114303583053101524}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114090156861619452}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!222 &222185356354077870

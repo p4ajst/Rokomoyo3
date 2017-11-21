@@ -12,7 +12,7 @@ public class MenuButton : MonoBehaviour {
     private GameObject How_to_Play_Button;
     private GameObject Retrun_Title_Button;
     private float x, y;
-    private bool OnOff;
+    static private bool OnOff;
 	// Use this for initialization
 	void Start () {
         //images = GetComponent<Image>();
@@ -99,6 +99,11 @@ public class MenuButton : MonoBehaviour {
             Retrun_Title_Button.SetActive(true);
             return;
         }
+    }
+
+    public static bool GetFlag()
+    {
+        return OnOff;
     }
 
 }

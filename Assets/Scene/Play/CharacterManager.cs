@@ -28,6 +28,8 @@ public class CharacterManager : Singleton<CharacterManager>
     //キャラクターのバッテリー
     public static float battery = 1.0f;
     GameObject explain;
+    GameObject menu;
+    Transform menu_button;
 
     public static float GetBattery()
     {
@@ -130,8 +132,11 @@ public class CharacterManager : Singleton<CharacterManager>
 
         //説明文があるかどうかを取得する
         explain = GameObject.Find("Explain");
+        //メニューがあるかどうかを取得する
+        menu = GameObject.Find("Pause 1 1");
+        menu_button = menu.transform.Find("Retrun_Title_Button");
         //説明文がなかったら減らす
-        if (explain == null)
+        if (explain == null && MenuButton.GetFlag()==false)
             battery -= 0.01f / 360.0f;
 
         if (battery >= 1.0f)
