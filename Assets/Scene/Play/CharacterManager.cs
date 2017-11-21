@@ -25,6 +25,19 @@ public class CharacterManager : Singleton<CharacterManager>
     public chara roomba = null;
     GameObject player = null;
 
+    //キャラクターのバッテリー
+    public static float battery = 1.0f;
+
+    public static float GetBattery()
+    {
+        return battery;
+    }
+
+    public static void SetBattery(float _battery)
+    {
+        battery = _battery;
+    }
+
     /// <summary>
     /// 音符の設定
     /// </summary>
@@ -35,14 +48,8 @@ public class CharacterManager : Singleton<CharacterManager>
     }
 
 
-    /// <summary>
-    /// キャラクターの移動
-    /// </summary>
-    public void MoveCharacter()
+    public void InitCharacter()
     {
-        Debug.Log("movecharacter動いてます");
-
-
         GameObject obj = null;
         // キャラクターを探す
         //player = GameObject.Find("Player");
@@ -62,6 +69,16 @@ public class CharacterManager : Singleton<CharacterManager>
         player = GameObject.Find("Player");
         // キャラクターのコンポーネントを取得
         roomba = player.GetComponent<chara>();
+    }
+
+    /// <summary>
+    /// キャラクターの移動
+    /// </summary>
+    public void MoveCharacter()
+    {
+        Debug.Log("movecharacter動いてます");
+
+
 
         // 音が鳴っているか
         if (!sound.music.isPlaying)
@@ -102,11 +119,15 @@ public class CharacterManager : Singleton<CharacterManager>
             // 関数を抜ける
             return;
         }
+        InitCharacter();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
         MoveCharacter();
+
+        battery -= 0.01f / 60.0f;
+        Debug.Log(battery);
     }
 }
