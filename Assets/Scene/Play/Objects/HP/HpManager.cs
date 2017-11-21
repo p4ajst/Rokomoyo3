@@ -15,7 +15,9 @@ public class HpManager : MonoBehaviour {
     public Image frame;
     Color color1= new Color(1.0f, 1.0f, 1.0f, 1.0f);
     Color color2 = new Color(1.0f, 0.0f, 0.0f, 1.0f);
-    void Awake()
+    // シーン変更
+    SceneChanger sceneChanger = null;
+     void Awake()
     {
         //一に設定
         nowRate = 1;
@@ -27,9 +29,13 @@ public class HpManager : MonoBehaviour {
     {
         //Scriptを持っている画像を読み込む
        Bar = GetComponent<Image>();
+        GameObject scene = GameObject.Find("FadePanel");
+        // コンポーネントを取得
+       sceneChanger = scene.GetComponent<SceneChanger>();
+
     }
 
-  
+
     void Update()
     {
         _hp = CharacterManager.GetBattery();
@@ -55,7 +61,7 @@ public class HpManager : MonoBehaviour {
         }
         if (_hp < 0)
         {
-
+            sceneChanger.ExecuteCoroutine("Result");
             // 最大を超えたら1に戻す
             _hp = 1;
             nowRate = 1;
