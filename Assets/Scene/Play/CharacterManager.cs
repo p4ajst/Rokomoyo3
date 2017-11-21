@@ -27,6 +27,7 @@ public class CharacterManager : Singleton<CharacterManager>
 
     //キャラクターのバッテリー
     public static float battery = 1.0f;
+    GameObject explain;
 
     public static float GetBattery()
     {
@@ -127,7 +128,14 @@ public class CharacterManager : Singleton<CharacterManager>
     {
         MoveCharacter();
 
-        battery -= 0.01f / 60.0f;
-        Debug.Log(battery);
+        //説明文があるかどうかを取得する
+        explain = GameObject.Find("Explain");
+        //説明文がなかったら減らす
+        if (explain == null)
+            battery -= 0.01f / 360.0f;
+
+        if (battery >= 1.0f)
+            battery = 1.0f;
+        //Debug.Log(battery);
     }
 }

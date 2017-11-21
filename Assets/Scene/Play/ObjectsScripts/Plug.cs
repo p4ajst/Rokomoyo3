@@ -16,12 +16,9 @@ public class Plug : Gimmick {
         //ギミックの上にいるなら
         if (base.OnFloor() == true)
         {
-            //Debug.Log("当たっています");
 
             //プレイヤーの充電を回復する
-            //player.GetComponent<test>().battery += 1.0f / 30.0f;
-            //player.GetComponent<chara>().Charge += 0.01f / 30.0f;
-            CharacterManager.SetBattery(CharacterManager.GetBattery() + 0.01f / 30.0f);
+            CharacterManager.SetBattery(CharacterManager.GetBattery() + 0.01f);
         }
         //トラップから抜けたら
         else if (base.OnFloor() == false)
