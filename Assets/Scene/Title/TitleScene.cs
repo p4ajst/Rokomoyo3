@@ -46,6 +46,6 @@ public class TitleScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        CharacterManager.SetBattery(1.0f);
     }
 }

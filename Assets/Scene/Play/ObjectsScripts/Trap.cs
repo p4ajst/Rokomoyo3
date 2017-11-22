@@ -15,16 +15,14 @@ public class Trap : MonoBehaviour{
 
     // Use this for initialization
     virtual protected void Start () {
-        
-        
+        //プレイヤーオブジェクトを取得する
+        player = GameObject.Find("Player");
+
     }
 
     //プレイヤーが同じ座標にいるかチェックする
     public bool OnFloor()
     {
-        //プレイヤーオブジェクトを取得する
-        player = GameObject.Find("Player");
-
         //プレイヤーの座標を取得する
         pos_x = player.transform.position.x;
         pos_z = player.transform.position.z;

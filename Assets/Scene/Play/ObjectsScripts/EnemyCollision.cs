@@ -8,8 +8,17 @@ public class EnemyCollision : Trap {
     GameObject microUSB;
     int objCount = 0;
 
-	// Use this for initialization
-	override protected void Start () {
+    /// <summary>
+    /// オブジェクトの配列
+    /// </summary>
+    GameObject[] objs = null;
+    /// <summary>
+    /// 音符のList構造の配列
+    /// </summary>
+    List<Notes> notes = new List<Notes>();
+
+    // Use this for initialization
+    override protected void Start () {
         base.Start();
         //スタートオブジェクトを取得する
         start = GameObject.Find("Start");
@@ -17,6 +26,16 @@ public class EnemyCollision : Trap {
         microUSB = GameObject.Find("microUSB/microUSB");
         //即死トラップを数える
         objCount = GameObject.Find("DeathTraps").transform.childCount;
+
+        // 指定したタグで設定されたオブジェクトを探す
+        objs = GameObject.FindGameObjectsWithTag("Notes");
+        // 探したオブジェクト分foreach構文を回す
+        foreach (GameObject obj in objs)
+        {
+            // Notesのコンポーネントを取得
+            Notes n = obj.GetComponent<Notes>();
+            notes.Add(n);
+        }
     }
 	
 	// Update is called once per frame
@@ -32,12 +51,23 @@ public class EnemyCollision : Trap {
             //プレイヤーの座標をスタートの座標にする
             player.transform.position = start.transform.position;
 
+            //ステレオプラグ踏んでたなら
+            if (StereoPlug.noteFripFlag)
+            {
+                foreach (Notes note in notes)
+                {
+                    //音符の種類を変える処理
+                    note.FlipNote();
+                    StereoPlug.noteFripFlag = false;
+                }
+            }
+
             //鍵をアクティブにする
             GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);
 
             if(objCount!=0)
             {
-                Debug.Log("即死トラップの数は" + objCount);
+                //Debug.Log("即死トラップの数は" + objCount);
                 for (int i = 0; i < objCount; i++)
                 {
                     if (i == 0)

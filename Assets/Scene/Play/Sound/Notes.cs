@@ -9,7 +9,6 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class Notes : MonoBehaviour
 {
-
     /// <summary>
     /// 曲のタイプ
     /// </summary>

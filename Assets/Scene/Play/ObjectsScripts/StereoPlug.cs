@@ -14,6 +14,11 @@ public class StereoPlug : Gimmick {
     /// </summary>
     List<Notes> notes = new List<Notes>();
 
+    /// <summary>
+    /// 反転フラグ
+    /// </summary>
+    public static bool noteFripFlag;
+
 	// Use this for initialization
 	void Start () {
         base.Start();
@@ -27,6 +32,8 @@ public class StereoPlug : Gimmick {
             Notes n = obj.GetComponent<Notes>();
             notes.Add(n);
         }
+
+        noteFripFlag = false;
     } 
 
     // Update is called once per frame
@@ -36,7 +43,7 @@ public class StereoPlug : Gimmick {
         //ギミックの上にいるなら
         if (base.OnFloor() == true && !flag)
         {
-            Debug.Log("のってる");
+            //Debug.Log("のってる");
             flag = true;
             // notesの配列分foreach構文を回す
             foreach (Notes note in notes)
@@ -44,6 +51,7 @@ public class StereoPlug : Gimmick {
                 //音符の種類を変える処理
                 note.FlipNote();
             }
+            noteFripFlag = !noteFripFlag;
         }
         //トラップから抜けたら
         else if (base.OnFloor() == false)

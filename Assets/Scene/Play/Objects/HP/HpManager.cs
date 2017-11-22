@@ -29,9 +29,9 @@ public class HpManager : MonoBehaviour {
     {
         //Scriptを持っている画像を読み込む
        Bar = GetComponent<Image>();
-        GameObject scene = GameObject.Find("FadePanel");
+       GameObject scene = GameObject.Find("FadePanel");
         // コンポーネントを取得
-       sceneChanger = scene.GetComponent<SceneChanger>();
+        sceneChanger = SceneChanger.Instance;
 
     }
 

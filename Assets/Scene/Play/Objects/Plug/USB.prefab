@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4123500294677006}
+  - component: {fileID: 114449837029548314}
   m_Layer: 0
   m_Name: USB
   m_TagString: Untagged
@@ -120,7 +121,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4774337116112568}
   - component: {fileID: 95871751480591726}
-  - component: {fileID: 114450850255118268}
   m_Layer: 0
   m_Name: Plug (1)
   m_TagString: Untagged
@@ -152,7 +152,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1165526696151030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4321508714747352}
@@ -485,15 +485,15 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114450850255118268
+--- !u!114 &114449837029548314
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1789034879419826}
+  m_GameObject: {fileID: 1165526696151030}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0320d1b5efb9a1349a38e50fdda1c05e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1cc7e427e3521b049ad8f15f0449805c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!135 &135808734226727228
