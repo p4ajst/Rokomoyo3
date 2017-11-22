@@ -4,18 +4,29 @@ using UnityEngine;
 
 public class HowToPlay : MonoBehaviour {
 
+    bool flag;
+    public GameObject HowTo;
     public void OnClick()
     {
-        Debug.Log("asobikata");
+        flag = true;
+        HowTo.SetActive(true);
+    }
+    public void OnClick1()
+    {
+        flag = true;
+        HowTo.SetActive(false);
+    }
+    // Use this for initialization
+    void Start () {
+        flag = false;
+        HowTo.SetActive(false);
+
     }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Update is called once per frame
+    void Update () {
+        if (flag == true)
+        {
+        }
+    }
 }
