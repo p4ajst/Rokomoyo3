@@ -65,6 +65,7 @@ public class HpManager : MonoBehaviour {
             // 最大を超えたら1に戻す
             CharacterManager.SetBattery(1.0f);
             nowRate = 1;
+            Stage.SetStageNum(1);
             sceneChanger.ExecuteCoroutine("Result");
         }
         // HPゲージに値を設定

@@ -52,6 +52,9 @@ public class EnemyCollision : Trap {
             //プレイヤーの座標をスタートの座標にする
             player.transform.position = start.transform.position;
 
+            //鍵をアクティブにする
+            GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);
+
             //ステレオプラグ踏んでたなら
             if (StereoPlug.noteFripFlag)
             {
@@ -62,9 +65,6 @@ public class EnemyCollision : Trap {
                     StereoPlug.noteFripFlag = false;
                 }
             }
-
-            //鍵をアクティブにする
-            GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);
 
             if(objCount!=0)
             {

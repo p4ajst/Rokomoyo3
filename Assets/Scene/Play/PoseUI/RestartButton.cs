@@ -62,17 +62,8 @@ public class RestartButton : MonoBehaviour {
         //プレイヤーの座標をスタートの座標にする
         player.transform.position = start.transform.position;
 
-        //ステレオプラグ踏んでたなら
-        if (StereoPlug.noteFripFlag)
-        {
-            Debug.Log("反転入れ替え");
-            foreach (Notes note in notes)
-            {
-                //音符の種類を変える処理
-                note.FlipNote();
-            }
-            StereoPlug.noteFripFlag = false;
-        }
+        //鍵をアクティブにする
+        GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);
 
         //オブジェクトの数分復活させる
         if (objCount != 0)
@@ -87,12 +78,22 @@ public class RestartButton : MonoBehaviour {
             }
         }
 
+        //ステレオプラグ踏んでたなら
+        if (StereoPlug.noteFripFlag)
+        {
+            Debug.Log("反転入れ替え");
+            foreach (Notes note in notes)
+            {
+                //音符の種類を変える処理
+                note.FlipNote();
+            }
+            StereoPlug.noteFripFlag = false;
+        }
+
         //microUSBのフラグをfalseにする
         //if (microUSB != null)
         //    microUSB.GetComponent<microUSB>().SetFlag(false);
         microUSB.SetFlag(false);
 
-        //鍵をアクティブにする
-        GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);
     }
 }

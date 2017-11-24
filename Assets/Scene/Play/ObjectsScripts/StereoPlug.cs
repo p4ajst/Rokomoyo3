@@ -20,7 +20,7 @@ public class StereoPlug : Gimmick {
     public static bool noteFripFlag;
 
 	// Use this for initialization
-	void Start () {
+	override protected void Start () {
         base.Start();
 
         // 指定したタグで設定されたオブジェクトを探す
@@ -34,10 +34,10 @@ public class StereoPlug : Gimmick {
         }
 
         noteFripFlag = false;
-    } 
+    }
 
     // Update is called once per frame
-    void Update () {
+    override protected void Update () {
         base.Update();
 
         //ギミックの上にいるなら

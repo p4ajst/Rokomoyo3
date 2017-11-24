@@ -64,6 +64,10 @@ public class DeathTrap : Trap {
             //プレイヤーの座標をスタートの座標にする
             player.transform.position = start.transform.position;
 
+            //鍵をアクティブにする
+            //if (GameObject.Find("Key").transform.Find("Key") == null)
+            GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);
+
             //ステレオプラグ踏んでたなら
             if (StereoPlug.noteFripFlag)
             {
@@ -74,11 +78,6 @@ public class DeathTrap : Trap {
                     StereoPlug.noteFripFlag = false;
                 }
             }
-
-            //鍵をアクティブにする
-            //if (GameObject.Find("Key").transform.Find("Key") == null)
-                GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);
-
 
             //if(key == null)
             //{
