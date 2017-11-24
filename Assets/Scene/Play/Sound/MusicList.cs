@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 /// <summary>
 /// 曲リストのクラス
@@ -9,7 +8,7 @@ using UnityEditor;
 public class MusicList : ScriptableObject
 {
     // インスペクタ上で編集可能
-    [System.SerializableAttribute]
+    [System.Serializable]
 
     /// <summary>
     /// 再生する曲のデータ
