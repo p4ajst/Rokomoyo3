@@ -12,6 +12,7 @@ public class Title_Button : MonoBehaviour
     {
         sceneChanger.ExecuteCoroutine("Title");
         CharacterManager.SetBattery(1.0f);
+        Stage.SetStageNum(1);
     }
 
     // Use this for initialization

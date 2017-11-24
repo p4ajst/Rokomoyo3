@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyCollision : Trap {
 
     GameObject start;
-    GameObject microUSB;
+    //GameObject microUSB;
     int objCount = 0;
 
     /// <summary>
@@ -23,7 +23,7 @@ public class EnemyCollision : Trap {
         //スタートオブジェクトを取得する
         start = GameObject.Find("Start");
         //microUSBオブジェクトを取得する
-        microUSB = GameObject.Find("microUSB/microUSB");
+        //microUSB = GameObject.Find("microUSB/microUSB");
         //即死トラップを数える
         objCount = GameObject.Find("DeathTraps").transform.childCount;
 
@@ -46,8 +46,9 @@ public class EnemyCollision : Trap {
         if (base.OnFloor() == true)
         {
             //microUSBのフラグをfalseにする
-            if (microUSB != null)
-                microUSB.GetComponent<microUSB>().SetFlag(false);
+            //if (microUSB != null)
+            //    microUSB.GetComponent<microUSB>().SetFlag(false);
+            microUSB.SetFlag(false);
             //プレイヤーの座標をスタートの座標にする
             player.transform.position = start.transform.position;
 

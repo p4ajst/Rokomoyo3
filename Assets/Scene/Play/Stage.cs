@@ -65,4 +65,9 @@ public class Stage : MonoBehaviour
 	void Update ()
     {
 	}
+
+    public static void SetStageNum(int _num)
+    {
+        stageNum = _num;
+    }
 }

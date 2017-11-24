@@ -23,7 +23,7 @@ public class RestartButton : MonoBehaviour {
     int objCount = 0;
 
     //microUSBを取得するためのGameObject型の変数
-    GameObject microUSB;
+    //GameObject microUSB;
 
     // Use this for initialization
     void Start () {
@@ -44,7 +44,7 @@ public class RestartButton : MonoBehaviour {
         player = GameObject.Find("Player");
 
         //microUSBオブジェクトを取得する
-        microUSB = GameObject.Find("microUSB/microUSB");
+        //microUSB = GameObject.Find("microUSB/microUSB");
 
         //即死トラップを数える
         objCount = GameObject.Find("DeathTraps").transform.childCount;
@@ -88,8 +88,9 @@ public class RestartButton : MonoBehaviour {
         }
 
         //microUSBのフラグをfalseにする
-        if (microUSB != null)
-            microUSB.GetComponent<microUSB>().SetFlag(false);
+        //if (microUSB != null)
+        //    microUSB.GetComponent<microUSB>().SetFlag(false);
+        microUSB.SetFlag(false);
 
         //鍵をアクティブにする
         GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);

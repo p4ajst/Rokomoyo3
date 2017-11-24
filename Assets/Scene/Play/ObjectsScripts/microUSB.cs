@@ -5,7 +5,7 @@ using UnityEngine;
 public class microUSB : Gimmick {
 
     //踏んでいるか確認のフラグ
-    bool flag = false;
+    static bool flag = false;
 
     // Use this for initialization
     override protected void Start () {
@@ -25,11 +25,11 @@ public class microUSB : Gimmick {
 	}
 
     //フラグ確認用
-    public bool GetFlag()
+    static public bool GetFlag()
     {
         return flag;
     }
-    public void SetFlag(bool _flag)
+    static public void SetFlag(bool _flag)
     {
         flag = _flag;
     }
