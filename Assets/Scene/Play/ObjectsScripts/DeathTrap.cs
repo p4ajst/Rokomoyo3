@@ -8,7 +8,7 @@ public class DeathTrap : Trap {
 
     //（空の）スタートオブジェクトを取得するためのGameObject型の変数
     GameObject start;
-    GameObject microUSB;
+    //GameObject microUSB;
 
     /// <summary>
     /// オブジェクトの配列
@@ -32,7 +32,7 @@ public class DeathTrap : Trap {
 
         //スタートオブジェクトを取得する
         start = GameObject.Find("Start");
-        microUSB = GameObject.Find("microUSB");
+        //microUSB = GameObject.Find("microUSB");
 
         // 指定したタグで設定されたオブジェクトを探す
         objs = GameObject.FindGameObjectsWithTag("Notes");
@@ -64,6 +64,10 @@ public class DeathTrap : Trap {
             //プレイヤーの座標をスタートの座標にする
             player.transform.position = start.transform.position;
 
+            //鍵をアクティブにする
+            //if (GameObject.Find("Key").transform.Find("Key") == null)
+            GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);
+
             //ステレオプラグ踏んでたなら
             if (StereoPlug.noteFripFlag)
             {
@@ -75,11 +79,6 @@ public class DeathTrap : Trap {
                 }
             }
 
-            //鍵をアクティブにする
-            //if (GameObject.Find("Key").transform.Find("Key") == null)
-                GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);
-
-
             //if(key == null)
             //{
             //    childKey.gameObject.SetActive(true);
@@ -87,9 +86,10 @@ public class DeathTrap : Trap {
         }
 
         //マイクロUSBを確認しフラグが立っているのなら
-        if (microUSB.GetComponent<microUSB>() != null)
+        //if (microUSB.GetComponent<microUSB>() != null)
         {
-            if (microUSB.GetComponent<microUSB>().GetFlag())
+            //if (microUSB.GetComponent<microUSB>().GetFlag())
+            if(microUSB.GetFlag())
             {
                 //オブジェクトを消す
                 gameObject.SetActive(false);

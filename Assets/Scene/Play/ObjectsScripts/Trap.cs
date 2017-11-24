@@ -7,8 +7,8 @@ using UnityEngine;
 public class Trap : MonoBehaviour{
 
     //プレイヤーの座標を保存する（ｘ、ｙのみ）
-    protected float pos_x;
-    protected float pos_z;
+    protected float pos_x = 0;
+    protected float pos_z = 0;
 
     //プレイヤーオブジェクトを取得するためのGameObject型の変数
     protected GameObject player;

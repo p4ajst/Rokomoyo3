@@ -10,7 +10,6 @@ public class Goal : Trap {
     GameObject key;
     bool goalflag = false;
     static int x = 2;
-    GameObject sound;
 
 	// Use this for initialization
 	override protected void Start () {
@@ -26,12 +25,16 @@ public class Goal : Trap {
         base.Update();
 
         //トラップの上にいるなら
-        if (base.OnFloor() == true)
+        if (base.OnFloor() )
         {
+            microUSB.SetFlag(false);
+            //player.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
             //シーン遷移する
-            if (key.active == false)
+            //if (key.activeSelf == true)
+            //if (key.active == false)
+            if (GameObject.Find("Key").transform.Find("Key").gameObject.activeSelf == false)
             {
-                //ゴールした瞬間にリープモーションでゴールへ動く
+                //ゴールした瞬間にリープでゴールへ動く
                 float MoveTime = Time.deltaTime / 0.5f*2;
                 float Length = Vector3.Distance(player.transform.position,new Vector3(gameObject.transform.position.x, player.transform.position.y, gameObject.transform.position.z));
                 float time = MoveTime / Length;
@@ -39,7 +42,10 @@ public class Goal : Trap {
 
                 //プレイヤーとゴールの位置が噛み合ったらシーン遷移
                 if (player.transform.position == new Vector3(gameObject.transform.position.x, player.transform.position.y, gameObject.transform.position.z))
+                {
                     Stage.ChangeStage();
+                    //player.transform.position = new Vector3(0.0f,0.0f,0.0f);
+                }
             }
         }
         //いないなら

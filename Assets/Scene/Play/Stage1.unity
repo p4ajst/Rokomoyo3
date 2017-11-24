@@ -3738,6 +3738,7 @@ GameObject:
   - component: {fileID: 1099097880}
   - component: {fileID: 1099097879}
   - component: {fileID: 1099097878}
+  - component: {fileID: 1099097882}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3822,6 +3823,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1099097882
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1099097877}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.45831734, y: 0.2889015, z: 0.7753329}
+  m_Center: {x: -0.0567573, y: 0.078385085, z: -0.061951637}
 --- !u!1 &1174678320
 GameObject:
   m_ObjectHideFlags: 0
@@ -4185,13 +4198,7 @@ Prefab:
       propertyPath: m_Name
       value: Goal
       objectReference: {fileID: 0}
-    - target: {fileID: 23859679489514602, guid: 090bfaf0aee732541ad0c25c05ce41b5,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f5dde2b3832d25b42a38090bb52d2db7, type: 2}
-    m_RemovedComponents:
-    - {fileID: 114756724385633466, guid: 090bfaf0aee732541ad0c25c05ce41b5, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 090bfaf0aee732541ad0c25c05ce41b5, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1220015324 stripped
