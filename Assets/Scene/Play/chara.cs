@@ -33,7 +33,7 @@ public class chara : MonoBehaviour {
         Charge = 100.0f;
 
         MoveSpeed = 0.5f;
-        RoteSpeed = 3.0f;
+        RoteSpeed = 3.0f*2.5f;
         
         //PlayerPos = this.gameObject.transform.position;
         a = 1;
@@ -57,7 +57,7 @@ public class chara : MonoBehaviour {
                 AmendedMove();
                 //待機モーションの切り替え４秒ごとに90°角度回転する
                 DeltaTime =DeltaTime+Time.deltaTime;
-                if (DeltaTime >= 4)
+                if (DeltaTime >= 2)
                 {
                     if(round==true)
                     {
@@ -132,7 +132,7 @@ public class chara : MonoBehaviour {
         {
             Quaternion angle = this.transform.rotation;
             float rote = angle.eulerAngles.y;
-            if(rote <= 2 && rote >= -2)
+            if(rote <= 5 || rote >= 355)
             {
                 //離れる移動の処理
                 MoveLengs = Vector3.Distance(this.transform.position, fAway);
@@ -140,7 +140,7 @@ public class chara : MonoBehaviour {
                 this.transform.position = Vector3.Lerp(this.transform.position, fAway, time);
                 
             }
-            else if(rote <= 92 && rote >= 88)
+            else if(rote <= 95 && rote >= 85)
             {
                 //離れる移動の処理
                 MoveLengs = Vector3.Distance(this.transform.position, rAway);
@@ -148,7 +148,7 @@ public class chara : MonoBehaviour {
                 this.transform.position = Vector3.Lerp(this.transform.position, rAway, time);
                 
             }
-            else if (rote <= 182&&rote >= 178)
+            else if (rote <= 185&&rote >= 175)
             {
                 //離れる移動の処理
                 MoveLengs = Vector3.Distance(this.transform.position, bAway);
@@ -156,7 +156,7 @@ public class chara : MonoBehaviour {
                 this.transform.position = Vector3.Lerp(this.transform.position, bAway, time);
                 
             }
-            else if(rote <= 272 && rote >= 268)
+            else if(rote <= 275 && rote >= 265)
             {
                 //離れる移動の処理
                 MoveLengs = Vector3.Distance(this.transform.position, lAway);
@@ -259,11 +259,11 @@ public class chara : MonoBehaviour {
     //待機モーション
     void waitrotate()
     {
-       
-       
-            //呼ばれた回数（timesの数0～3）＊９０°回転する
-            Quaternion newangle = Quaternion.Euler(0, times*90, 0);
-            this.gameObject.transform.rotation = Quaternion.Slerp(this.gameObject.transform.rotation, newangle, Time.deltaTime*RoteSpeed);
+
+        
+        //呼ばれた回数（timesの数0～3）＊９０°回転する
+        Quaternion newangle = Quaternion.Euler(0, times*90, 0);
+        this.gameObject.transform.rotation = Quaternion.Slerp(this.gameObject.transform.rotation, newangle, Time.deltaTime*RoteSpeed);
        
        
     }
