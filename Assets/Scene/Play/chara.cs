@@ -57,7 +57,7 @@ public class chara : MonoBehaviour {
                 AmendedMove();
                 //待機モーションの切り替え４秒ごとに90°角度回転する
                 DeltaTime =DeltaTime+Time.deltaTime;
-                if (DeltaTime >= 2)
+                if (DeltaTime >= 1)
                 {
                     if(round==true)
                     {
