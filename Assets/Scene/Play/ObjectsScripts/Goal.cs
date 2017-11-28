@@ -24,16 +24,20 @@ public class Goal : Trap {
         //基底クラスのUpdate関数
         base.Update();
 
+        Debug.Log(StereoPlug.noteFripFlag);
+
         //トラップの上にいるなら
         if (base.OnFloor() )
         {
-            microUSB.SetFlag(false);
             //player.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
             //シーン遷移する
             //if (key.activeSelf == true)
             //if (key.active == false)
             if (GameObject.Find("Key").transform.Find("Key").gameObject.activeSelf == false)
             {
+                microUSB.SetFlag(false);
+                StereoPlug.SetStereoFlag(false);
+
                 //ゴールした瞬間にリープでゴールへ動く
                 float MoveTime = Time.deltaTime / 0.5f*2;
                 float Length = Vector3.Distance(player.transform.position,new Vector3(gameObject.transform.position.x, player.transform.position.y, gameObject.transform.position.z));

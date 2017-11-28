@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class StereoPlug : Gimmick {
 
-    bool flag = false;
+    //ステレオプラグマスを踏んでいるかいないかのフラグ
+    static bool flag = false;
     /// <summary>
     /// オブジェクトの配列
     /// </summary>
@@ -17,7 +18,7 @@ public class StereoPlug : Gimmick {
     /// <summary>
     /// 反転フラグ
     /// </summary>
-    public static bool noteFripFlag;
+    public static bool noteFripFlag = false;
 
 	// Use this for initialization
 	override protected void Start () {
@@ -57,12 +58,12 @@ public class StereoPlug : Gimmick {
         else if (base.OnFloor() == false)
         {
             flag = false;
-            //Debug.Log("当たっていません");
         }
-        //if(flag)
-        //{
+    }
 
-        //    Debug.Log("はーんてぇーんっ！");
-        //}
+    //音反転のフラグをもらう
+    public static void SetStereoFlag(bool _flag)
+    {
+        noteFripFlag = _flag;
     }
 }

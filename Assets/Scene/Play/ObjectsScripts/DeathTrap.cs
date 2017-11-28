@@ -69,7 +69,7 @@ public class DeathTrap : Trap {
             GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);
 
             //ステレオプラグ踏んでたなら
-            if (StereoPlug.noteFripFlag)
+            if (StereoPlug.noteFripFlag==true)
             {
                 foreach (Notes note in notes)
                 {
