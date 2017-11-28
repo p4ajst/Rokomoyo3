@@ -11,6 +11,7 @@ public class Title_Button : MonoBehaviour
     public void OnButton()
     {
         sceneChanger.ExecuteCoroutine("Title");
+        Stage.SetStageNum(1);
         CharacterManager.SetBattery(1.0f);
         Stage.SetStageNum(1);
     }

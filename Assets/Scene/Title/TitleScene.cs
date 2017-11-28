@@ -47,5 +47,10 @@ public class TitleScene : MonoBehaviour
     void Update()
     {
         CharacterManager.SetBattery(1.0f);
+
+        if(Input.GetMouseButton(1))
+        {
+            Application.Quit();
+        }
     }
 }

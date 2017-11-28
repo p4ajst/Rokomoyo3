@@ -10,7 +10,16 @@ public class Stage : MonoBehaviour
     /// <summary>
     /// ステージシーン番号
     /// </summary>
-    static int stageNum = 1;
+    static private int stageNum = 1;
+
+    /// <summary>
+    /// ステージシーン番号の設定
+    /// </summary>
+    /// <param name="num">設定したい番号</param>
+    public static void SetStageNum(int num)
+    {
+        stageNum = num;
+    }
 
     /// <summary>
     /// ステージの遷移
@@ -65,9 +74,4 @@ public class Stage : MonoBehaviour
 	void Update ()
     {
 	}
-
-    public static void SetStageNum(int _num)
-    {
-        stageNum = _num;
-    }
 }
