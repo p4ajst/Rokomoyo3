@@ -17,6 +17,9 @@ public class EnemyCollision : Trap {
     /// </summary>
     List<Notes> notes = new List<Notes>();
 
+    //サウンドストップ用
+    GameObject soundmng;
+
     // Use this for initialization
     override protected void Start () {
         base.Start();
@@ -36,6 +39,9 @@ public class EnemyCollision : Trap {
             Notes n = obj.GetComponent<Notes>();
             notes.Add(n);
         }
+
+        //サウンドストップ用
+        soundmng = GameObject.Find("SoundManager");
     }
 	
 	// Update is called once per frame
@@ -51,6 +57,9 @@ public class EnemyCollision : Trap {
             microUSB.SetFlag(false);
             //プレイヤーの座標をスタートの座標にする
             player.transform.position = start.transform.position;
+
+            //サウンドストップ
+            soundmng.GetComponent<SoundManager>().StopMusic();
 
             //鍵をアクティブにする
             GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);

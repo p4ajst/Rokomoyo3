@@ -19,6 +19,9 @@ public class DeathTrap : Trap {
     /// </summary>
     List<Notes> notes = new List<Notes>();
 
+    //サウンドストップ用
+    GameObject soundmng;
+
     ///// <summary>
     ///// 例
     ///// </summary>
@@ -44,6 +47,8 @@ public class DeathTrap : Trap {
             notes.Add(n);
         }
 
+        //サウンドストップ用
+        soundmng = GameObject.Find("SoundManager");
 
         //key = GameObject.Find("Key");
 
@@ -63,6 +68,9 @@ public class DeathTrap : Trap {
         {
             //プレイヤーの座標をスタートの座標にする
             player.transform.position = start.transform.position;
+
+            //サウンドストップ
+            soundmng.GetComponent<SoundManager>().StopMusic();
 
             //鍵をアクティブにする
             //if (GameObject.Find("Key").transform.Find("Key") == null)

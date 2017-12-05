@@ -13,6 +13,12 @@ public class Trap : MonoBehaviour{
     //プレイヤーオブジェクトを取得するためのGameObject型の変数
     protected GameObject player;
 
+    private void Awake()
+    {
+        //プレイヤーオブジェクトを取得する
+        player = GameObject.Find("Player");
+    }
+
     // Use this for initialization
     virtual protected void Start () {
         //プレイヤーオブジェクトを取得する

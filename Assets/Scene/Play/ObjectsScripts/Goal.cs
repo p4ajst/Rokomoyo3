@@ -24,7 +24,7 @@ public class Goal : Trap {
         //基底クラスのUpdate関数
         base.Update();
 
-        Debug.Log(StereoPlug.noteFripFlag);
+        //Debug.Log(StereoPlug.noteFripFlag);
 
         //トラップの上にいるなら
         if (base.OnFloor() )

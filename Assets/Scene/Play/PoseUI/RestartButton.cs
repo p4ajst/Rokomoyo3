@@ -25,6 +25,9 @@ public class RestartButton : MonoBehaviour {
     //microUSBを取得するためのGameObject型の変数
     //GameObject microUSB;
 
+    //サウンドストップ用
+    GameObject soundmng;
+
     // Use this for initialization
     void Start () {
         // 指定したタグで設定されたオブジェクトを探す
@@ -48,6 +51,9 @@ public class RestartButton : MonoBehaviour {
 
         //即死トラップを数える
         objCount = GameObject.Find("DeathTraps").transform.childCount;
+
+        //サウンドストップ用
+        soundmng = GameObject.Find("SoundManager");
     }
 	
 	// Update is called once per frame
@@ -61,6 +67,9 @@ public class RestartButton : MonoBehaviour {
 
         //プレイヤーの座標をスタートの座標にする
         player.transform.position = start.transform.position;
+
+        //サウンドストップ
+        soundmng.GetComponent<SoundManager>().StopMusic();
 
         //鍵をアクティブにする
         GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);

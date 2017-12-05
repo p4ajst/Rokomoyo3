@@ -695,6 +695,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114449837029548314, guid: b008aff80bf395146a031fc8605188ec,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b008aff80bf395146a031fc8605188ec, type: 2}
   m_IsPrefabParent: 0
@@ -8192,6 +8197,11 @@ Prefab:
     - target: {fileID: 1165526696151030, guid: b008aff80bf395146a031fc8605188ec, type: 2}
       propertyPath: m_Name
       value: USB (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114449837029548314, guid: b008aff80bf395146a031fc8605188ec,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b008aff80bf395146a031fc8605188ec, type: 2}
