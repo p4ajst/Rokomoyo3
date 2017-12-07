@@ -32,7 +32,6 @@ public class HpManager : MonoBehaviour {
        GameObject scene = GameObject.Find("FadePanel");
         // コンポーネントを取得
         sceneChanger = SceneChanger.Instance;
-
     }
 
 

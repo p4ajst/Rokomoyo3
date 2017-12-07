@@ -7,6 +7,40 @@ using UnityEngine;
 /// </summary>
 public class SoundManager : Singleton<SoundManager>
 {
+
+    /// <summary>
+    /// デリゲートを実装する型
+    /// </summary>
+    /// <param name="musicData">曲のデータ</param>
+    public delegate void StartMusic(MusicList.MusicData musicData);
+    public delegate void StopsMusic();
+
+    /// <summary>
+    /// デリゲートの変数
+    /// </summary>
+    private List<StartMusic> startMusics = new List<StartMusic>();
+    private List<StopsMusic> stopsMusics = new List<StopsMusic>();
+
+    /// <summary>
+    /// デリゲートのプロパティ
+    /// </summary>
+    public StartMusic Startmusic
+    {
+        set
+        {
+            // 値の代入
+            startMusics.Add(value);
+        }
+    }
+    public StopsMusic Stopsmusic
+    {
+        set
+        {
+            // 値の代入
+            stopsMusics.Add(value);
+        }
+    }
+
     /// <summary>
     /// 曲を再生するスピーカー
     /// </summary>
@@ -153,9 +187,17 @@ public class SoundManager : Singleton<SoundManager>
         // そうでなかったら
         else
         {
+            // 曲の停止
+            StopMusic();
             // 変更する必要があるので変数を代入する
             nowPlay = type;
             music.clip = data.musicClip;
+            foreach (var startMusic in startMusics)
+            {
+                 // デリゲートを呼ぶ
+                 startMusic(data);
+            }
+
             // trueを返す
             return true;
         }
@@ -175,6 +217,13 @@ public class SoundManager : Singleton<SoundManager>
     public void StopMusic()
     {
         music.Stop();
+
+        foreach (var stopMusic in stopsMusics)
+        {
+            // デリゲートを呼ぶ
+            stopMusic();
+        }
+
         // 音のタイプをNONEにする
         nowPlay = Notes.MusicType.NONE;
     }
