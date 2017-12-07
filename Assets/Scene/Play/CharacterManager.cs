@@ -63,11 +63,6 @@ public class CharacterManager : Singleton<CharacterManager>
         obj = GameObject.Find("SoundManager");
         // サウンドマネージャーのコンポーネントを取得
         sound = obj.GetComponent<SoundManager>();
-
-        // シーンからサウンドマネージャーを探す
-        obj = GameObject.Find("SoundManager");
-        // コンポーネントを取得
-        sound = obj.GetComponent<SoundManager>();
         // キャラクターを探す
         player = GameObject.Find("Player");
         // キャラクターのコンポーネントを取得
