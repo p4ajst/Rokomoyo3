@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -155,6 +155,7 @@ MonoBehaviour:
   enableFadeOn: 0
   speed: 0.02
   FadeImage: {fileID: 114601786380386738}
+  count: 0
 --- !u!222 &222930498902686524
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -189,7 +190,7 @@ RectTransform:
   m_GameObject: {fileID: 1566880437109782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 224334865214477262}
   m_RootOrder: 0
