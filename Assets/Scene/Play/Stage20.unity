@@ -3529,9 +3529,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 765485495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fe76263da7629c41aeefa69b9e609bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 0be1a1739578c084e9a6ddbeb2a213e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  warpParticle: {fileID: 1509881940159846, guid: 6e0169ec330bfc34aab6a7a1f309c2e9,
+    type: 2}
+  warpPoints:
+  - {fileID: 378185726}
+  - {fileID: 1388165399}
 --- !u!1 &766067972
 GameObject:
   m_ObjectHideFlags: 0
@@ -4416,8 +4421,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &909390107 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4257379291093230, guid: 495e1b06296404e41ab77a2cd576fd01,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 909390106}
 --- !u!1 &969787474
 GameObject:
