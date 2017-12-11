@@ -8,7 +8,6 @@ public class DeathTrap : Trap {
 
     //（空の）スタートオブジェクトを取得するためのGameObject型の変数
     GameObject start;
-    //GameObject microUSB;
 
     /// <summary>
     /// オブジェクトの配列
@@ -22,12 +21,9 @@ public class DeathTrap : Trap {
     //サウンドストップ用
     GameObject soundmng;
 
-    ///// <summary>
-    ///// 例
-    ///// </summary>
-    //microUSB mUSB;
-    //GameObject key;
-    //Transform childKey;
+    //フェード用
+    GameObject fade;
+
     // Use this for initialization
     override protected void Start () {
         //基底クラスのStart関数
@@ -50,10 +46,9 @@ public class DeathTrap : Trap {
         //サウンドストップ用
         soundmng = GameObject.Find("SoundManager");
 
-        //key = GameObject.Find("Key");
-
-        //childKey = key.transform.Find("Key").transform;
-        //mUSB = microUSB.GetComponent<microUSB>();
+        //フェード用
+        fade = GameObject.Find("FadeManager");
+        fade.GetComponent<FadeManager>();
 
     }
 
@@ -66,18 +61,25 @@ public class DeathTrap : Trap {
         //トラップの上にいるなら
         if (base.OnFloor() == true)
         {
-            //プレイヤーの座標をスタートの座標にする
-            player.transform.position = start.transform.position;
+            //フェードオンするためのフラグをオンにする
+            fade.GetComponent<FadeManager>().enableFade = true;
+            fade.GetComponent<FadeManager>().enableFadeOn = true;
 
             //サウンドストップ
             soundmng.GetComponent<SoundManager>().StopMusic();
+        }
+
+        //フェードオンで画面が暗くなったら処理を実行する
+        if (fade.GetComponent<FadeManager>().GetEnableAlphaTop() == true)
+        {
+            //プレイヤーの座標をスタートの座標にする
+            player.transform.position = start.transform.position;
 
             //鍵をアクティブにする
-            //if (GameObject.Find("Key").transform.Find("Key") == null)
             GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);
 
             //ステレオプラグ踏んでたなら
-            if (StereoPlug.noteFripFlag==true)
+            if (StereoPlug.noteFripFlag == true)
             {
                 foreach (Notes note in notes)
                 {
@@ -86,30 +88,13 @@ public class DeathTrap : Trap {
                     StereoPlug.noteFripFlag = false;
                 }
             }
-
-            //if(key == null)
-            //{
-            //    childKey.gameObject.SetActive(true);
-            //}
         }
 
-        //マイクロUSBを確認しフラグが立っているのなら
-        //if (microUSB.GetComponent<microUSB>() != null)
+        //microUSBを踏まれたなら
+        if (microUSB.GetFlag())
         {
-            //if (microUSB.GetComponent<microUSB>().GetFlag())
-            if(microUSB.GetFlag())
-            {
-                //オブジェクトを消す
-                gameObject.SetActive(false);
-            }
+            //オブジェクトを消す
+            gameObject.SetActive(false);
         }
-
-        //if (mUSB != null)
-        //{
-        //    if(mUSB.GetFlag())
-        //    {
-        //        gameObject.SetActive(false);
-        //    }
-        //}
     }
 }
