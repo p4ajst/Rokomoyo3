@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class Notes : MonoBehaviour
 {
+
     /// <summary>
     /// 曲のタイプ
     /// </summary>
@@ -70,7 +71,7 @@ public class Notes : MonoBehaviour
     }
 
     /// <summary>
-    /// げーむの管理者
+    /// ゲームの管理者
     /// </summary>
     GameManager gameManager = null;
 
@@ -160,6 +161,9 @@ public class Notes : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 音符のマテリアルの設定
+    /// </summary>
     public void SetNote()
     {
         if(type == MusicType.ATTRACT)
