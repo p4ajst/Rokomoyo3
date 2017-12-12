@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StereoPlug : Gimmick {
 
+    public GameObject GameObj;
+    public Inverted Game_Script;
     //ステレオプラグマスを踏んでいるかいないかのフラグ
     static bool flag = false;
     /// <summary>
@@ -23,7 +25,7 @@ public class StereoPlug : Gimmick {
 	// Use this for initialization
 	override protected void Start () {
         base.Start();
-
+        Game_Script = GameObj.GetComponent<Inverted>();
         // 指定したタグで設定されたオブジェクトを探す
         objs = GameObject.FindGameObjectsWithTag("Notes");
         // 探したオブジェクト分foreach構文を回す
@@ -46,6 +48,7 @@ public class StereoPlug : Gimmick {
         {
             //Debug.Log("のってる");
             flag = true;
+            Game_Script.invertedOn();
             // notesの配列分foreach構文を回す
             foreach (Notes note in notes)
             {
