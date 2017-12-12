@@ -185,10 +185,16 @@ public class SoundManager : Singleton<SoundManager>
             return false;
         }
         // そうでなかったら
-        else
+        else if(music.isPlaying)
         {
             // 曲の停止
             StopMusic();
+            return true;
+        }
+        else
+        {
+            //// 曲の停止
+            //StopMusic();
             // 変更する必要があるので変数を代入する
             nowPlay = type;
             music.clip = data.musicClip;
