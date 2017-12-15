@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: MaskMater
-  m_Shader: {fileID: 10750, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: Mask
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -39,9 +39,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
+<<<<<<< HEAD:Assets/Scene/Title/MaskMater.mat
         m_Texture: {fileID: 2800000, guid: db3ca2dcd3a15fd468263444c0e6ba6c, type: 3}
         m_Scale: {x: 0, y: 1}
         m_Offset: {x: 0.8006439, y: 0}
+=======
+        m_Texture: {fileID: 2800000, guid: a36f428dc3ad79f4188b90f337566ae1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+>>>>>>> cfc09ad130e4d72b1a2522968be8a6c8b5c9244b:Assets/Scene/Title/Mask.mat
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}

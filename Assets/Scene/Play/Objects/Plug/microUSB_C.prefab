@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4416088719019548}
   - component: {fileID: 114426844066912680}
   m_Layer: 0
-  m_Name: microUSB
+  m_Name: microUSB_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
