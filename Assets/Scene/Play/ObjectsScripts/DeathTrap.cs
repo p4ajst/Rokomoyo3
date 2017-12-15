@@ -24,6 +24,14 @@ public class DeathTrap : Trap {
     //フェード用
     GameObject fade;
 
+    //マイクロUSB用
+    GameObject microUSB;
+    GameObject microUSBChild;
+
+    //鍵用
+    GameObject key;
+    GameObject keyChild;
+
     // Use this for initialization
     override protected void Start () {
         //基底クラスのStart関数
@@ -31,7 +39,10 @@ public class DeathTrap : Trap {
 
         //スタートオブジェクトを取得する
         start = GameObject.Find("Start");
-        //microUSB = GameObject.Find("microUSB");
+
+        //鍵
+        key = GameObject.Find("Key");
+        keyChild = key.transform.Find("key").gameObject;
 
         // 指定したタグで設定されたオブジェクトを探す
         objs = GameObject.FindGameObjectsWithTag("Notes");
@@ -50,6 +61,10 @@ public class DeathTrap : Trap {
         fade = GameObject.Find("FadeManager");
         fade.GetComponent<FadeManager>();
 
+        //microUSB用
+        microUSB = GameObject.Find("microUSB");
+        if (microUSB != null)
+            microUSBChild = microUSB.transform.Find("microUSB_C").gameObject;
     }
 
     // Update is called once per frame
@@ -76,7 +91,8 @@ public class DeathTrap : Trap {
             player.transform.position = start.transform.position;
 
             //鍵をアクティブにする
-            GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);
+            if (keyChild.activeSelf==false)
+                keyChild.SetActive(true);
 
             //ステレオプラグ踏んでたなら
             if (StereoPlug.noteFripFlag == true)
@@ -91,10 +107,13 @@ public class DeathTrap : Trap {
         }
 
         //microUSBを踏まれたなら
-        if (microUSB.GetFlag())
+        if (microUSBChild != null) 
         {
-            //オブジェクトを消す
-            gameObject.SetActive(false);
+            if (microUSBChild.GetComponent<microUSB>().GetFlag())
+            {
+                //オブジェクトを消す
+                gameObject.SetActive(false);
+            }
         }
     }
 }

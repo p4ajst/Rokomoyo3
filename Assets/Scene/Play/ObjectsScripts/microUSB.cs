@@ -25,7 +25,7 @@ public class microUSB : Gimmick {
 	}
 
     //フラグ確認用
-    static public bool GetFlag()
+    public bool GetFlag()
     {
         return flag;
     }
