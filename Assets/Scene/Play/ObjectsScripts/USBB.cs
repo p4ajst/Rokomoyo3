@@ -8,18 +8,17 @@ public class USBB : Gimmick {
     bool usedFlagB = false;
 
     // Use this for initialization
-    void Start () {
+    override protected void Start () {
         base.Start();
     }
 	
 	// Update is called once per frame
-	void Update () {
+	override protected void Update () {
         base.Update();
 
         //オブジェクトの上に行ったら
         if (base.OnFloor() == true && usedFlagB == false)
         {
-            Debug.Log("上にいます");
             //フラグを立てる
             usedFlagB = true;
         }

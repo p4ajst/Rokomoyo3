@@ -73,12 +73,12 @@ public class Notes : MonoBehaviour
     /// <summary>
     /// ゲームの管理者
     /// </summary>
-    GameManager gameManager = null;
+    //GameManager gameManager = null;
 
     /// <summary>
     /// キャラクターの管理のクラスのインスタンス
     /// </summary>
-    CharacterManager charaManager;
+    //CharacterManager charaManager;
 
     /// <summary>
     /// 音符の初期化
@@ -101,8 +101,10 @@ public class Notes : MonoBehaviour
     public void ClickNotes(BaseEventData data)
     {
         // 音符を設定
-        charaManager.SetNotes(this.gameObject.GetComponent<Notes>());
-        switch(type)
+        //charaManager.SetNotes(this.gameObject.GetComponent<Notes>());
+        CharacterManager.Instance.SetNotes(this.gameObject.GetComponent<Notes>());
+
+        switch (type)
         {
             case MusicType.ATTRACT:
                 // 音を再生させる
@@ -166,13 +168,22 @@ public class Notes : MonoBehaviour
     /// </summary>
     public void SetNote()
     {
-        if(type == MusicType.ATTRACT)
+        //if(type == MusicType.ATTRACT)
+        //{
+        //    GetComponent<Renderer>().material = gameManager.materialPink;
+        //}
+        //if (type == MusicType.AWAY)
+        //{
+        //    GetComponent<Renderer>().material = gameManager.materialBlue;
+        //}
+
+        if (type == MusicType.ATTRACT)
         {
-            GetComponent<Renderer>().material = gameManager.materialPink;
+            GetComponent<Renderer>().material = GameManager.Instance.materialPink;
         }
         if (type == MusicType.AWAY)
         {
-            GetComponent<Renderer>().material = gameManager.materialBlue;
+            GetComponent<Renderer>().material = GameManager.Instance.materialBlue;
         }
     }
 
@@ -181,8 +192,11 @@ public class Notes : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        GameObject obj =  GameObject.Find("CharacterManager");
-        charaManager = obj.gameObject.GetComponent<CharacterManager>();
+        //GameObject obj =  GameObject.Find("CharacterManager");
+        //charaManager = obj.gameObject.GetComponent<CharacterManager>();
+
+        InitNotes();
+
     }
 
     /// <summary>
@@ -190,9 +204,8 @@ public class Notes : MonoBehaviour
     /// </summary>
     private void Start ()
     {
-        InitNotes();
-        GameObject obj = GameObject.Find("GameManager");
-        gameManager = obj.GetComponent<GameManager>();
+        //GameObject obj = GameObject.Find("GameManager");
+        //gameManager = obj.GetComponent<GameManager>();
     }
 
     /// <summary>

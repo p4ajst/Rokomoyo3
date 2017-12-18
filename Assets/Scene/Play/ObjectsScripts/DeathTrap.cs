@@ -63,7 +63,8 @@ public class DeathTrap : Trap {
 
         //microUSB用
         microUSB = GameObject.Find("microUSB");
-        if (microUSB != null)
+        //if (microUSB != null)
+        if (microUSB.transform.childCount >= 1)
             microUSBChild = microUSB.transform.Find("microUSB_C").gameObject;
     }
 

@@ -925,7 +925,6 @@ GameObject:
   m_Component:
   - component: {fileID: 324146445}
   - component: {fileID: 324146447}
-  - component: {fileID: 324146446}
   m_Layer: 0
   m_Name: SumiRobo
   m_TagString: Untagged
@@ -971,18 +970,6 @@ Transform:
   m_Father: {fileID: 2005202018}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &324146446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114898553976990276, guid: e315747c9eb91df4cb7bca969f1162ba,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 324146444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &324146447
 Animator:
   serializedVersion: 3
@@ -6706,7 +6693,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
