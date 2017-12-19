@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 
 public class TitleScene : MonoBehaviour
 {
+    GameObject mouseCursor;
+
     /// <summary>
     /// クリック処理
     /// </summary>
@@ -41,6 +43,10 @@ public class TitleScene : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        mouseCursor = GameObject.Find("MouseCursor");
+
+        // シーンを跨いでもオブジェクトが消えないようにする
+        DontDestroyOnLoad(mouseCursor);
     }
 
     // Update is called once per frame

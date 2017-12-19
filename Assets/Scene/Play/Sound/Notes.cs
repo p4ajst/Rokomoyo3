@@ -36,22 +36,9 @@ public class Notes : MonoBehaviour
     /// <summary>
     /// 曲情報
     /// </summary>
-    //private MusicList.MusicData soundData;
-
     private MusicList.MusicData attract;
     private MusicList.MusicData away;
 
-    /// <summary>
-    /// 曲のデータのプロパティ
-    /// </summary>
-    //public MusicList.MusicData SoundData
-    //{
-    //    // 取得
-    //    get
-    //    {
-    //        return soundData;
-    //    }
-    //}
 
     public MusicList.MusicData Attract
     {
@@ -133,17 +120,6 @@ public class Notes : MonoBehaviour
                 }
                 break;
         }
-        //// 音を再生させる
-        //if(soundManager.ChangeMusic(type, soundData))
-        //{
-        //    // 音楽の再生
-        //    soundManager.PlayMusic();
-        //}
-        //else
-        //{
-        //    // 音楽の停止
-        //    soundManager.StopMusic();
-        //}
     }
 
     /// <summary>

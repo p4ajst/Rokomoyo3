@@ -15,11 +15,14 @@ public class SoundManager : Singleton<SoundManager>
     public delegate void StartMusic(MusicList.MusicData musicData);
     public delegate void StopsMusic();
 
+
     /// <summary>
     /// デリゲートの変数
     /// </summary>
     private List<StartMusic> startMusics = new List<StartMusic>();
     private List<StopsMusic> stopsMusics = new List<StopsMusic>();
+
+  
 
     /// <summary>
     /// デリゲートのプロパティ
@@ -76,7 +79,7 @@ public class SoundManager : Singleton<SoundManager>
         // コンポーネントの取得
         music = GetComponent<AudioSource>();
         // 音量の変更
-        music.volume = 1.0f;
+        music.volume = 0.2f;
         // ループを許可する
         music.loop = true;
     }
@@ -184,17 +187,10 @@ public class SoundManager : Singleton<SoundManager>
             // 変更する必要がないので、falseを返す
             return false;
         }
-        // そうでなかったら
-        else if(music.isPlaying)
+        else
         {
             // 曲の停止
             StopMusic();
-            return true;
-        }
-        else
-        {
-            //// 曲の停止
-            //StopMusic();
             // 変更する必要があるので変数を代入する
             nowPlay = type;
             music.clip = data.musicClip;
@@ -234,25 +230,6 @@ public class SoundManager : Singleton<SoundManager>
         nowPlay = Notes.MusicType.NONE;
     }
     
-
-    ///// <summary>
-    ///// 音符の反転
-    ///// </summary>
-    //public void FlipNote()
-    //{
-    //    if(nowPlay == Notes.MusicType.NONE)
-    //    {
-    //        return;
-    //    }
-    //    if(nowPlay == Notes.MusicType.ATTRACT)
-    //    {
-    //        nowPlay = Notes.MusicType.AWAY;
-    //    }
-    //    if(nowPlay == Notes.MusicType.AWAY)
-    //    {
-    //        nowPlay = Notes.MusicType.ATTRACT;
-    //    }
-    //}
 
     /// <summary>
     /// シーン開始時に最初に実行される関数

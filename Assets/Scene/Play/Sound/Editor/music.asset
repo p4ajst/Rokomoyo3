@@ -92,20 +92,20 @@ MonoBehaviour:
     musicName: "\u30C8\u30C3\u30AB\u30FC\u30BF\u3068\u30D5\u30FC\u30AC\u3000\u30CB\u77ED\u8ABF"
     composerName: "\u30D0\u30C3\u30CF"
   - musicClip: {fileID: 8300000, guid: 2ca83f2944f1ded41be2e89f9b19f280, type: 3}
-    musicName: "\u30DC\u30EC\u30ED"
-    composerName: "\u30E9\u30F4\u30A7\u30EB"
-  - musicClip: {fileID: 8300000, guid: 01e1ddaf9975e5846bda54e1a91eb5f7, type: 3}
     musicName: "\u30EF\u30EB\u30C4\u300C\u6625\u306E\u58F0\u300D"
     composerName: "\u30E8\u30CF\u30F3\u30FB\u30B7\u30E5\u30C8\u30E9\u30A6\u30B9"
+  - musicClip: {fileID: 8300000, guid: 01e1ddaf9975e5846bda54e1a91eb5f7, type: 3}
+    musicName: "\u56DB\u5B63\u300C\u590F\u300D\u300D"
+    composerName: "\u30F4\u30A3\u30F4\u30A1\u30EB\u30C7\u30A3"
   - musicClip: {fileID: 8300000, guid: b9bffad6eddd7ef4ea77a5d436b4f2aa, type: 3}
     musicName: "\u30CF\u30F3\u30AC\u30EA\u30A2\u821E\u66F2\u7B2C\uFF15\u756A"
     composerName: "\u30D6\u30E9\u30FC\u30E0\u30B9"
   - musicClip: {fileID: 8300000, guid: de3414cce7c33d24cafb81530dcb5162, type: 3}
-    musicName: "\u56DB\u5B63\u300C\u590F\u300D"
-    composerName: "\u30F4\u30A3\u30F4\u30A1\u30EB\u30C7\u30A3"
-  - musicClip: {fileID: 8300000, guid: fa06425a38bd4a74d872da6b4df3ee33, type: 3}
     musicName: "\u4EA4\u97FF\u66F2\u7B2C\uFF11\u756A\u300C\u5DE8\u4EBA\u300D\u7B2C\uFF14\u697D\u7AE0"
     composerName: "\u30DE\u30FC\u30E9\u30FC"
+  - musicClip: {fileID: 8300000, guid: fa06425a38bd4a74d872da6b4df3ee33, type: 3}
+    musicName: "\u30DC\u30EC\u30ED"
+    composerName: "\u30E9\u30F4\u30A7\u30EB"
   - musicClip: {fileID: 8300000, guid: fc8d429bdf5484442ac7b53191e77490, type: 3}
     musicName: "\u4EA4\u97FF\u66F2\u7B2C\uFF19\u756A\u300C\u5408\u5531\u300D"
     composerName: "\u30D9\u30FC\u30C8\u30FC\u30F4\u30A7\u30F3"
