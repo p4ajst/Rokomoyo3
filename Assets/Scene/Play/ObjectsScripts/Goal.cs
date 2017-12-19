@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class Goal : Trap {
 
     GameObject key;
+    GameObject keyChild;
+
     bool goalflag = false;
     static int x = 2;
 
@@ -16,6 +18,7 @@ public class Goal : Trap {
         //基底クラスのStart関数
         base.Start();
         key = GameObject.Find("Key");
+        keyChild = key.transform.Find("key").gameObject;
     }
 
     // Update is called once per frame
@@ -33,7 +36,8 @@ public class Goal : Trap {
             //シーン遷移する
             //if (key.activeSelf == true)
             //if (key.active == false)
-            if (GameObject.Find("Key").transform.Find("Key").gameObject.activeSelf == false)
+            //if (GameObject.Find("Key").transform.Find("Key").gameObject.activeSelf == false)
+            if (keyChild.activeSelf == false)
             {
                 microUSB.SetFlag(false);
                 StereoPlug.SetStereoFlag(false);

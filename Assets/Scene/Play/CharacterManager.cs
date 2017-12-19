@@ -74,7 +74,7 @@ public class CharacterManager : Singleton<CharacterManager>
     /// </summary>
     public void MoveCharacter()
     {
-        Debug.Log("movecharacter動いてます");
+        //Debug.Log("movecharacter動いてます");
 
 
 
@@ -82,7 +82,7 @@ public class CharacterManager : Singleton<CharacterManager>
         if (!sound.music.isPlaying)
         {
             roomba.MoveEnd();
-            Debug.Log("回ってる");
+            //Debug.Log("回ってる");
             return;
         }
        
@@ -102,7 +102,7 @@ public class CharacterManager : Singleton<CharacterManager>
        else
        {
            roomba.MoveEnd();
-           Debug.Log("回ってる");
+           //Debug.Log("回ってる");
        }
     }
 

@@ -28,6 +28,10 @@ public class RestartButton : MonoBehaviour {
     //サウンドストップ用
     GameObject soundmng;
 
+    //鍵用
+    GameObject key;
+    GameObject keyChild;
+
     // Use this for initialization
     void Start () {
         // 指定したタグで設定されたオブジェクトを探す
@@ -54,6 +58,10 @@ public class RestartButton : MonoBehaviour {
 
         //サウンドストップ用
         soundmng = GameObject.Find("SoundManager");
+
+        //鍵
+        key = GameObject.Find("Key");
+        keyChild = key.transform.Find("key").gameObject;
     }
 	
 	// Update is called once per frame
@@ -72,7 +80,9 @@ public class RestartButton : MonoBehaviour {
         soundmng.GetComponent<SoundManager>().StopMusic();
 
         //鍵をアクティブにする
-        GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);
+        //GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);
+        if (keyChild.activeSelf == false)
+            keyChild.SetActive(true);
 
         //オブジェクトの数分復活させる
         if (objCount != 0)

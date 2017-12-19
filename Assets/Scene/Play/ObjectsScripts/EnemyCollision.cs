@@ -27,6 +27,10 @@ public class EnemyCollision : Trap {
     //フェード用
     GameObject fade;
 
+    //鍵用
+    GameObject key;
+    GameObject keyChild;
+
     // Use this for initialization
     override protected void Start () {
         base.Start();
@@ -52,6 +56,10 @@ public class EnemyCollision : Trap {
         //フェード用
         fade = GameObject.Find("FadeManager");
         fade.GetComponent<FadeManager>();
+
+        //鍵
+        key = GameObject.Find("Key");
+        keyChild = key.transform.Find("key").gameObject;
     }
 	
 	// Update is called once per frame
@@ -77,7 +85,9 @@ public class EnemyCollision : Trap {
             player.transform.position = start.transform.position;
 
             //鍵をアクティブにする
-            GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);
+            //GameObject.Find("Key").transform.Find("Key").gameObject.SetActive(true);
+            if (keyChild.activeSelf == false)
+                keyChild.SetActive(true);
 
             //ステレオプラグ踏んでたなら
             if (StereoPlug.noteFripFlag)
